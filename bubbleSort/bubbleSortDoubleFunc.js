@@ -8,20 +8,26 @@ Algorithm:
 (3) Once no more elements can be swapped, the sorting is complete
 */
 
+
+//Funtion to swap characters and supplement secondary loop
+const swap = (nums, i1, i2) => {
+    let temp = nums[i1];
+    nums[i1] = nums[i2];
+    nums[i2] = temp;
+}
+//Main function that takes in an array and bubble sorts using swap and a single loop
 const bubbleSort = (array) => {
     let completed = true
 
     while(completed){
-        for (i = 0; i < array.length; i++) {
-            if ()
+        completed = false;
+        for (i = 1; i < array.length; i++) {
+            if (array[i - 1] > array[i]) {
+                swap(array, i-1, i);
+                completed = true;
+            }
         }
     }
-
-    
 };
 
-
-
-
-
-console.log(bubbleSort([3,62,1,6,32,5,6,3,2,234,53]));
+console.log(bubbleSort([3,7,2,76,3,135,45,64,12]));
