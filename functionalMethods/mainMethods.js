@@ -17,3 +17,11 @@ console.log(myWordArray.map(noisyArray));
 // Expected output: ["CAT!", "I'MA!", "KITTY!", "CAT!", "AND!", "I!", "MEOW!", "MEOW!", "MEOW!", "AND!", "I!", "MEOW!", "MEOW!", "MEOW!"]
 
 
+// 'reduce' works very similar to map but takes in a function with 2 parameters and an optional starting point then returns the accumulator
+const newNumArray = [1,2,3,4,5,6,7,8,9,10];
+
+//function gets the accumulator and current_element parameters
+console.log(newNumArray.reduce(function (acc, current) { 
+    return acc * current;
+}), 1);  //optional accumulator starting point taken as the second parameter
+//Expected output: 3628800
