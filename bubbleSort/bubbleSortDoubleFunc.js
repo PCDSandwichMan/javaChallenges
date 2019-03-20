@@ -9,22 +9,21 @@ Algorithm:
 */
 
 
-//Funtion to swap characters and supplement secondary loop
+//Function to swap characters and supplement secondary loop
 const swap = (nums, i1, i2) => {
-    let temp = nums[i1];
+    let temp = nums[i1]; //save the value since we will be reassigning
     nums[i1] = nums[i2];
     nums[i2] = temp;
 }
 //Main function that takes in an array and bubble sorts using swap and a single loop
 const bubbleSort = (array) => {
-    let completed = true
-
+    let completed = true //Variable that we can use to determine if our loop is still iterating
     while(completed){
-        completed = false;
+        completed = false; //will remain false if the 'if' conditional is not met
         for (i = 1; i < array.length; i++) {
-            if (array[i - 1] > array[i]) {
-                swap(array, i-1, i);
-                completed = true;
+            if (array[i - 1] > array[i]) { //this checks if the list is sorted or not
+                swap(array, i-1, i); //We use our swap function to have our elements trade indices
+                completed = true; //resets our value since we know that the array was unsorted
             }
         }
     }
